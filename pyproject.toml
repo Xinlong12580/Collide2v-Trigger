@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "collide2v-trigger"
+version = "0.1.0"
+description = "Configurable COLLIDE-2V proxy implementations of the CMS Phase-2 L1 trigger menu"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy",
+  "pyarrow",
+]
+
+[project.optional-dependencies]
+eos = [
+  "fsspec",
+  "fsspec-xrootd",
+]
+plots = [
+  "matplotlib",
+]
+dev = [
+  "pytest",
+]
+
+[project.scripts]
+collide2v-apply-triggers = "collide2v_trigger.runners.apply_object:main"
+collide2v-apply-id-triggers = "collide2v_trigger.runners.apply_id:main"
+collide2v-calibrate-threshold = "collide2v_trigger.runners.calibrate_rate:main"
+collide2v-calibrate-menu = "collide2v_trigger.runners.calibrate_menu:main"
+collide2v-plot-threshold-scan = "collide2v_trigger.runners.plot_threshold_scan:main"
+collide2v-trigger-efficiencies = "collide2v_trigger.runners.efficiencies:main"
+collide2v-scan-eos-directory = "collide2v_trigger.runners.scan_eos_directory:main"
+collide2v-scan-thresholds = "collide2v_trigger.runners.scan_thresholds:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

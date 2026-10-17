@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "profile": "toy_example_not_calibrated",
+  "description": "Example partial override file. Values are illustrative and are not validated CMS or COLLIDE-2V calibrations.",
+  "implementation": "dedicated_object_no_absolute_pv_dz_recomputed_ht",
+  "collision_rate_mhz": 40.0,
+  "thresholds": {
+    "SingleTkMuon_22": {
+      "muon_pt": 12.0
+    },
+    "SingleTkElectron_36": {
+      "electron_pt": 9.0
+    },
+    "SinglePuppiJet_230": {
+      "jet_pt": 40.0
+    },
+    "PuppiHT_450": {
+      "ht": 56.0
+    },
+    "PuppiETmiss_200": {
+      "met": 95.0
+    },
+    "DoubleTkMuon_15_7": {
+      "leading_muon_pt": 12.0,
+      "subleading_muon_pt": 6.0
+    }
+  }
+}

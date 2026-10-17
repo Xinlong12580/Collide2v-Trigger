@@ -1,0 +1,37 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+build/
+dist/
+.venv/
+venv/
+
+# Local datasets are multi-GB and must never be committed.
+data/*
+!data/README.md
+*.parquet
+
+# Generated reports, plots, and audit output.
+results/*
+!results/README.md
+
+# Local configuration
+/.aws/
+/.codex/
+/.agents/
+
+# Local experiments and dataset manifests
+/quick_tests/
+/configs/manifests/
+/minbias_files.txt
+
+# Investigation utilities outside the maintained package
+/scripts/analysis/
+/scripts/data/
+/scripts/run_id_trigger_batch.sh
+/scripts/plotting/plot_dz_and_ht_distributions.py
+/scripts/plotting/plot_vertex_sumpt2_comparison.py
+/docs/trigger_rate_investigation.md
+/requirements-xrootd.txt
